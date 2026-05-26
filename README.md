@@ -1,2 +1,2 @@
-# lsdev-s-redirector
-Redirects sites to F(L)OSS alternatives.
+# lsdevs-redirector
+Userscript to redirect sites to F(L)OSS alternatives.
