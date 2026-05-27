@@ -2,7 +2,7 @@
 // @name LSDev's Redirector
 // @namespace https://github.com/LeastSaneDeveloper
 // @author LeastSaneDeveloper
-// @version 1.3.1
+// @version 1.3.2
 // @description  Redirects URLs to a modified (Invidious) redirector launchpad.
 
 // @homepage    https://github.com/LeastSaneDeveloper/lsdevs-redirector
@@ -85,9 +85,7 @@
     ) {
         let url = new URL("https://redirect.invidious.io" + everythingAfterHostname);
         url.searchParams.set("servicetype", "youtube");
-        window.location.replace(
-            url.toString();
-        );
+        window.location.replace(url.toString());
     } 
     
     else if (
