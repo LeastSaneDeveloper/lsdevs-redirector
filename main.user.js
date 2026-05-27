@@ -2,7 +2,7 @@
 // @name LSDev's Redirector
 // @namespace https://github.com/LeastSaneDeveloper
 // @author LeastSaneDeveloper
-// @version 1.0
+// @version 1.1
 // @description  Redirects URLs to a modified (Invidious) redirector launchpad.
 
 // @homepage    https://github.com/LeastSaneDeveloper/lsdevs-redirector
@@ -62,7 +62,7 @@
 
         const observer = new MutationObserver((mutations) => {
             mutations.forEach((mutation) => {
-                mutation.addedNodes.forEach(processRow);
+                mutation.addedNodes.forEach((node) => { processRow(node, service); });
             });
         });
 
@@ -75,11 +75,11 @@
     // youtube links
 
     if (
-        hostName !== "dnr.youtube.com" &&
-        hostName !== "dnr.www.youtube.com" &&
-        hostName !== "dnr.youtu.be"
+        hostName === "dnr.youtube.com" &&
+        hostName === "dnr.www.youtube.com" &&
+        hostName === "dnr.youtu.be"
     ) {
-        window.location.replace("https://youtu.be" + everythingAfterHostname);
+        
     } else if (
         hostName === "youtube.com" ||
         hostName === "www.youtube.com" ||
