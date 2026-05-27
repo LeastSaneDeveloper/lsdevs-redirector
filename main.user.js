@@ -2,7 +2,7 @@
 // @name LSDev's Redirector
 // @namespace https://github.com/LeastSaneDeveloper
 // @author LeastSaneDeveloper
-// @version 1.2
+// @version 1.3
 // @description  Redirects URLs to a modified (Invidious) redirector launchpad.
 
 // @homepage    https://github.com/LeastSaneDeveloper/lsdevs-redirector
@@ -17,7 +17,6 @@
 
 // @match *://lsdevsredirector.io/*
 // @match *://redirect.invidious.io/*
-// @match *://*.redirect.invidious.io/*
 
 // @run-at document-start
 // @grant GM.getValue
@@ -84,13 +83,16 @@
         hostName === "www.youtube.com" ||
         hostName === "youtu.be"
     ) {
+        let url = new URL("https:/redirect.invidious.io" + everythingAfterHostname);
+        url.searchParams.set("servicetype", "youtube");
         window.location.replace(
-            "https://youtube.redirect.invidious.io" + everythingAfterHostname,
+            url.toString();
         );
-    } else if (
-        hostName === "youtube.redirect.invidious.io" ||
-        hostName === "yt.redirect.invidious.io"
+    } 
+    
+    else if (
+        hostName === "redirect.invidious.io"
     ) {
-        observeRows("youtube");
+        observeRows(queryParams.get("servicetype"));
     }
 })();
