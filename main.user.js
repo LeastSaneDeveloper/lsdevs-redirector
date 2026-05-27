@@ -2,7 +2,7 @@
 // @name LSDev's Redirector
 // @namespace https://github.com/LeastSaneDeveloper
 // @author LeastSaneDeveloper
-// @version 1.1
+// @version 1.2
 // @description  Redirects URLs to a modified (Invidious) redirector launchpad.
 
 // @homepage    https://github.com/LeastSaneDeveloper/lsdevs-redirector
@@ -15,10 +15,9 @@
 // @match *://youtube.com/*
 // @match *://youtu.be/*
 
-//
-
 // @match *://lsdevsredirector.io/*
 // @match *://redirect.invidious.io/*
+// @match *://*.redirect.invidious.io/*
 
 // @run-at document-start
 // @grant GM.getValue
@@ -75,8 +74,8 @@
     // youtube links
 
     if (
-        hostName === "dnr.youtube.com" &&
-        hostName === "dnr.www.youtube.com" &&
+        hostName === "dnr.youtube.com" ||
+        hostName === "dnr.www.youtube.com" ||
         hostName === "dnr.youtu.be"
     ) {
         
