@@ -15,7 +15,7 @@
 // @match *://youtube.com/*
 // @match *://youtu.be/*
 
-// @match *://lsdevsredirector.io/*
+// @match *://leastsanedeveloper.github.io/lsdevs-redirector
 // @match *://redirect.invidious.io/*
 
 // @run-at document-start
@@ -28,7 +28,7 @@
     // NOTE: I switched to Zed Editor so the code formatting is a bit weird now
 
     "use strict";
-    // TODO implement settings page when you go to lsdevsredirector.io
+    // TODO implement settings page when you go to leastsanedeveloper.github.io/lsdevs-redirector
     const defaultInstances = await GM.getValue("defaultInstances", null);
     const hostName = window.location.hostname;
     const everythingAfterHostname =
