@@ -11,7 +11,7 @@
 // @updateURL   https://raw.githubusercontent.com/LeastSaneDeveloper/lsdevs-redirector/main/main.user.js
 // @supportURL  https://github.com/LeastSaneDeveloper/lsdevs-redirector/issues
 
-// @match *://www.youtube.com/*
+// @match *://*.youtube.com/*
 // @match *://youtube.com/*
 // @match *://youtu.be/*
 
